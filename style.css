@@ -54,18 +54,23 @@ input {
 }
 
 .site-header {
-  min-height: 64px;
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) auto auto;
-  align-items: center;
-  gap: 16px;
-  padding: 10px clamp(14px, 3vw, 30px);
   background: rgba(255, 250, 242, 0.94);
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 20;
   backdrop-filter: blur(14px);
+}
+
+.header-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 10px clamp(14px, 3vw, 30px);
 }
 
 .brand {
@@ -147,6 +152,8 @@ input {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(400px, 1.12fr);
   min-height: 330px;
+  max-width: 1600px;
+  margin: 0 auto;
   background: linear-gradient(105deg, rgba(255,250,242,1) 0%, rgba(255,250,242,0.96) 40%, rgba(255,250,242,0.62) 100%);
 }
 
@@ -268,6 +275,8 @@ h3 {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--paper);
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .trust-row div {
@@ -836,7 +845,7 @@ h3 {
 }
 
 @media (max-width: 1120px) {
-  .site-header {
+  .header-inner {
     grid-template-columns: 1fr auto;
   }
 
@@ -855,8 +864,12 @@ h3 {
     order: -1;
   }
 
+  .hero-image {
+    object-position: 75% center;
+  }
+
   .hero-image-wrap::before {
-    background: linear-gradient(0deg, var(--cream), rgba(247, 242, 234, 0) 42%);
+    background: linear-gradient(90deg, var(--cream) 0%, rgba(247, 242, 234, 0) 40%);
   }
 
   .bundle-grid {
@@ -882,7 +895,7 @@ h3 {
     line-height: 1.4;
   }
 
-  .site-header {
+  .header-inner {
     padding: 12px 16px;
     gap: 12px;
   }
